@@ -174,4 +174,16 @@ class HashMap implements Map {
         return count($this->storage);
     }
 
+    /**
+     * @return array
+     */
+    function keys() {
+        return array_map(
+            function ($pair) {
+                return $pair->first;
+            },
+            $this->storage
+        );
+    }
+
 }
